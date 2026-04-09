@@ -1,0 +1,338 @@
+                                                                    /* mise en forme HEADER */ 
+.site-logo{
+margin-left: 30px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  height: 100%;
+}
+.main-navigation ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  height: 80px;
+}
+.main-navigation li {
+  list-style: none;
+  margin-right: 60px;
+  color: black;
+}
+a.menu-link {
+  text-decoration: none;
+  color: black;
+}
+a.menu-link:hover {
+  text-decoration:underline;
+  color: #C02E44;
+}
+
+/* mise en forme du bouton commander */
+#menu-item-22{
+  background-color: #DC9F96;
+  width: 236px;
+  height:100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0px;
+}
+#menu-item-22 a{
+  color: white;
+}
+#menu-item-22:hover, #menu-item-22> a:hover{
+  background-color: #C02E44;
+  width: 236px;
+  height:100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0px;
+  text-decoration: none;
+}
+
+/*  marge header  */
+.page .entry-header{
+    margin: 0px;
+}
+
+/*  mise en forme interligne titre  */
+.titre-page-accueil{
+line-height: 50px;
+padding-bottom: 50px;
+}
+
+                                                                        /* mise en forme de la page ACCUEIL */
+/* mise en forme des feuilles et cannettes */
+.feuilles-cannette {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.cannette{
+  position: relative;
+  z-index: 2;
+}
+.feuille-droite, .feuille-gauche {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+.feuille-droite {
+  left: 50%;
+  transform: translate(0%, -50%);
+ }
+.feuille-gauche {
+  right: 50%;
+  transform: translate(0%, -50%);
+ }
+.titre-gouts{
+  color: #D2776A;
+}
+
+                                                                       /* mise en forme de la page NOUS RENCONTRER */
+
+/* mise en forme du titre, du texte et de la fleur */
+.titre-nous-rencontrer{
+  line-height: 50px;
+  color: #D2776A;
+  text-align: center;
+}
+.texte-page-rencontrer{
+  width: 680px;;
+}
+.groupe-titre-texte{
+  padding-left: 180px;
+  padding-top: 56px;
+}
+.row-equipe{
+  margin-bottom: 80px;
+}
+
+/* positionnement de la feuille sur la page rencontrer */
+.row-equipe {
+  position:relative;
+  margin:0px;
+  padding:0px;
+}
+.page-rencontrer-feuille {
+  position:absolute;
+  margin:0px;
+  padding:0px;
+  bottom: -40%;
+  left: 75%;
+  width: 220px;
+  height: auto;
+}
+.container-equipe{
+  margin-bottom: 100px;
+}
+
+/* mise en forme du formulaire de contact */
+#fluentform_5{
+  width: 383px;
+  height:auto;
+  margin: auto;/* pour que le formulaire soit centré */
+  z-index: 2;
+}
+.bouton-envoyer{
+  width: 198px!important;
+}
+
+/* mise en forme de la feuille avec le formulaire */
+.container-forms{
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+}
+#ff_5_description{
+  position: relative;
+   z-index: 2;
+}
+.feuille-forms {
+  position: absolute;
+  top: -20%;
+  right: 13%;
+  transform: translate(0%, 0%);
+  width: 147px;
+  height: auto;
+  z-index: 1;
+}
+.bandeau-cannettes{
+  padding-bottom: 0 !important;
+}
+
+                                                                /* mise en forme de la page COMMANDER */
+
+/* mise en forme du séparateur */
+.is-style-wide{
+  width: 890px!important;
+}
+/* mise en forme du titre Votre commande */
+.titre-votre-cde{
+  padding-left: 280px;
+}
+/* mise en forme du container des 4 images et texte */
+.container-products{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px !important;
+  width: 100%;
+  margin: 0 auto; /* Centrer horizontalement le conteneur */
+}
+
+/* On cible les colonnes de WordPress pour écraser le 25% */
+.container-products .ff-t-cell {
+  /* On calcule 15% moins une partie du gap pour que tout tienne sur une ligne */
+  flex: 0 0 calc(15% - 15px) !important; 
+  max-width: calc(15% - 15px) !important;
+  min-width: 200px; /* Sécurité pour ne pas que les images deviennent trop petites */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.img-text-container {
+  width: 194px;
+  height: 129px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+.centered-text {
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  max-width: 90%; /* Forcer le texte à prendre au maximum 90% de la largeur du parent */
+  overflow-wrap: break-word; /* Autoriser à casser au milieu du mot */
+  text-align: center;
+}
+
+.background-citron{
+  background-image: url(img/citron.png);
+ }
+
+.background-framboise{
+  background-image: url(img/framboise.png);
+ 
+}
+.background-pamplemousse{
+  background-image: url(img/pamplemousse.png);
+  
+}
+.background-fraise{
+  background-image: url(img/fraise.png);
+}
+
+.titre-page-cder{
+  height: 200px;
+ }
+.choix-nbre{
+  width: 40px;
+  height:56px;
+ }
+/* Pour Chrome, Safari, Edge et Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+          /* mise en forme du formulaire de contact */
+
+.container-forms h3{
+  color: white;
+}
+/* le conteneur utilise bien tout l'espace */
+.container-forms {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px; /* Limite la largeur totale pour ne pas que ce soit trop étiré */
+  margin: 0 auto; /* Centrer horizontalement */
+  gap: 0 !important; /* On gère l'espacement avec le padding des colonnes, pas avec un gap */
+  position: relative;
+  padding-top: 50px !important; /* Espace pour la ligne */
+}
+/* La ligne blanche horizontale entre les deux colonnes */
+.container-forms::before {
+  content: "";/* Contenu vide pour créer la ligne */
+  position: absolute;
+  top: 0;
+  left: 50%;/* Positionner la ligne au centre horizontalement */
+  transform: translateX(-50%); /* Centre la ligne */
+  width: 890px; /* Largeur exacte de la ligne pour l'aligner sur les champs */
+  height: 2px;
+  background-color: white;
+}
+
+/* Ajuster la largeur des colonnes */
+.container-forms .ff-t-cell.ff-t-column-1,
+.container-forms .ff-t-cell.ff-t-column-2 {
+  flex: 0 0 48%; /* 48% permet d'occuper l'espace sans passer à la ligne */
+  max-width: 48%; /* Même chose pour la largeur maximale */
+  box-sizing: border-box; /* Pour que le padding soit inclus dans la largeur */
+  padding: 20px 40px !important; /* padding pour réduire les champs inputs */
+}
+
+/* Colonne de GAUCHE : Texte aligné à GAUCHE */
+.container-forms .ff-t-cell.ff-t-column-1 {
+  text-align: left;
+}
+
+/* Colonne de DROITE : Ligne blanche et texte aligné à GAUCHE */
+.container-forms .ff-t-cell.ff-t-column-2 {
+  border-left: 2px solid white;
+  text-align: left;
+}
+
+/* Mise en forme des LABELS */
+.container-forms label {
+  color: white;
+  display: block;/* Pour que le width fonctionne et que les labels soient sur une ligne à part */
+  width: 100%; /* Ils prennent toute la largeur de la colonne pour être alignés à gauche */
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 8px;
+  white-space: nowrap; /* Empêche le nom de se couper en deux */
+}
+
+/* Les INPUTS sont réduits comme sur la maquette */
+.container-forms input {
+  width: 100%; /* Ils prendront la largeur définie par le padding des colonnes */
+  max-width: 400px;      /* Sécurité pour ne pas qu'ils soient trop longs */
+  border-radius: 7px;
+  border: none; /* Enlever les bordures par défaut */
+  height: 71px; /* Hauteur définie pour les champs de saisie maquette*/
+  margin-bottom: 20px;
+}
+
+/* Le Bouton Commander */
+.bouton-cder {
+  background-color: #E0B9B4 !important;
+  display: block; /* Pour que le margin auto fonctionne et que le bouton soit centré */
+  margin: 40px auto; /* Marge en haut pour espacer du formulaire, et auto à gauche et droite pour centrer */
+  padding: 15px 40px;
+}
+
+                                                            /* mise en forme du FOOTER */
+
+#custom-footer p{
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
