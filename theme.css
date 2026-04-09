@@ -106,7 +106,7 @@ padding-bottom: 50px;
   text-align: center;
 }
 .texte-page-rencontrer{
-  width: 680px;;
+  width: 680px;
 }
 .groupe-titre-texte{
   padding-left: 180px;
@@ -336,3 +336,62 @@ input::-webkit-inner-spin-button {
   align-items: center;
   margin-bottom: 0px;
 }
+
+                                                            /* mise en forme du RESPONSIVE */
+
+/* Affichage du menu hamburger sur les petits écrans (inf à 850px) */
+.menu-toggle {
+    display: none;/* On cache le bouton par défaut, il n'apparaîtra que sur les petits écrans */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;/* On veut que le bouton soit cliquable mais sans style par défaut */
+    padding: 0;
+}
+/* Mise en forme des trois barres du menu hamburger */
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #DC9F96; /* Couleur des barres */
+    transition: 0.3s;
+}
+
+/* --- RESPONSIVE : Sous 850px --- */
+@media screen and (max-width: 850px) {
+    /* 1. On force le conteneur global à prendre TOUTE la largeur */
+    .header-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+
+    /* On demande à la navigation d'occuper tout l'espace restant */
+    /* C'est ce qui va pousser le bouton vers la droite */
+    .main-navigation {
+        display: flex !important;/* On utilise flex pour pouvoir utiliser flex: 1 et justify-content */
+        flex: 1; /* Prend tout l'espace disponible */
+        justify-content: flex-end; /* Aligne le bouton à droite de cet espace */
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin-right: 30px;
+   }
+   #primary-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; 
+        left: 0;
+        background-color: #ffffff;
+        z-index: 9999;
+    }
+
+   
+
+   }

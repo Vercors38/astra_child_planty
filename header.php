@@ -75,6 +75,13 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
         </div>
 
         <nav id="site-navigation" class="main-navigation">
+			<!-- menu hamburger -->
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"> 
+        		<span class="bar"></span>
+        		<span class="bar"></span>
+        		<span class="bar"></span>
+    		</button>
+			<!-- menu de navigation principal -->
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'primary', // Assurez-vous qu'un menu est assigné à "Menu principal" dans WP
