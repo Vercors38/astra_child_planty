@@ -29,7 +29,7 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
 	<?php
 }
 ?>
-<?php wp_head(); ?>
+<?php wp_head(); ?><!-- hook pour ajouter les scripts et styles -->
 <?php astra_head_bottom(); ?>
 </head>
 
@@ -61,7 +61,7 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
 	// astra_header(); <!-- IGNORE -->
 ?>
 	 
-
+<!-- Ajout du header personnalisé-->
 <header id="custom-header" class="site-header">
     <div class="header-container">
         <div class="site-logo">
@@ -85,16 +85,16 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'primary', // Assurez-vous qu'un menu est assigné à "Menu principal" dans WP
-                'menu_id'        => 'primary-menu',
+                'menu_id'        => 'primary-menu',// ID pour le menu, utilisé pour le ciblage CSS
                 'container'      => false,
                 'fallback_cb'    => false,
-                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',// Structure HTML personnalisée pour le menu, avec des classes spécifiques pour le ciblage CSS
             ));
             ?>
         </nav>
-
     </div>
 </header>
+
 <?php
 	astra_header_after();
 
