@@ -1,4 +1,15 @@
-                                                                    /* mise en forme HEADER */ 
+body, html {
+    overflow-x: hidden !important; /* Empêche le défilement horizontal */
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+}
+
+.ast-plain-container {
+    overflow: hidden; /* Empêche les éléments internes de dépasser */
+}
+
+                                                            /* mise en forme HEADER */ 
 .site-logo{
 margin-left: 30px;
 }
@@ -97,21 +108,19 @@ padding-bottom: 50px;
   color: #D2776A;
 }
 
-                                                                       /* mise en forme de la page NOUS RENCONTRER */
+
+                                                  /* mise en forme de la page NOUS RENCONTRER */
 
 /* mise en forme du titre, du texte et de la fleur */
-.titre-nous-rencontrer{
-  line-height: 50px;
-  color: #D2776A;
-  text-align: center;
-}
+
 .texte-page-rencontrer{
-  width: 680px;
+  font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #000000;
+    width: 100%;
 }
-.groupe-titre-texte{
-  padding-left: 180px;
-  padding-top: 56px;
-}
+
 .row-equipe{
   margin-bottom: 80px;
 }
@@ -128,22 +137,23 @@ padding-bottom: 50px;
   padding:0px;
   bottom: -40%;
   left: 75%;
-  width: 220px;
+  width: 30%;
   height: auto;
-}
+  }
 .container-equipe{
   margin-bottom: 100px;
 }
 
 /* mise en forme du formulaire de contact */
 #fluentform_5{
-  width: 383px;
+  width:40%;
   height:auto;
   margin: auto;/* pour que le formulaire soit centré */
   z-index: 2;
 }
 .bouton-envoyer{
-  width: 198px!important;
+  width: 40%!important;
+  z-index: 10;
 }
 
 /* mise en forme de la feuille avec le formulaire */
@@ -158,10 +168,11 @@ padding-bottom: 50px;
 }
 .feuille-forms {
   position: absolute;
-  top: -20%;
-  right: 13%;
+  top: -25%;
+  right: 20%;
   transform: translate(0%, 0%);
-  width: 147px;
+  /*width: 147px;*/
+  width: 40%;
   height: auto;
   z-index: 1;
 }
@@ -183,7 +194,7 @@ padding-bottom: 50px;
 .container-products{
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap !important; /* Permet de faire passer les éléments à la ligne si nécessaire */
   gap: 30px !important;
   width: 100%;
   margin: 0 auto; /* Centrer horizontalement le conteneur */
@@ -192,8 +203,8 @@ padding-bottom: 50px;
 /* On cible les colonnes de WordPress pour écraser le 25% */
 .container-products .ff-t-cell {
   /* On calcule 15% moins une partie du gap pour que tout tienne sur une ligne */
-  flex: 0 0 calc(15% - 15px) !important; 
-  max-width: calc(15% - 15px) !important;
+  flex: 0 0 calc(15% - 15px) !important;/* 15% pour que les 4 colonnes tiennent sur une ligne, et on enlève une partie du gap pour compenser l'espacement entre les colonnes */
+  max-width: calc(15% - 15px) !important;/* Même chose pour la largeur maximale */
   min-width: 200px; /* Sécurité pour ne pas que les images deviennent trop petites */
   display: flex;
   flex-direction: column;
@@ -292,7 +303,7 @@ input::-webkit-inner-spin-button {
   text-align: left;
 }
 
-/* Colonne de DROITE : Ligne blanche et texte aligné à GAUCHE */
+/* Colonne de DROITE : Ligne blanche verticale et texte aligné à GAUCHE */
 .container-forms .ff-t-cell.ff-t-column-2 {
   border-left: 2px solid white;
   text-align: left;
@@ -301,8 +312,6 @@ input::-webkit-inner-spin-button {
 /* Mise en forme des LABELS */
 .container-forms label {
   color: white;
-  display: block;/* Pour que le width fonctionne et que les labels soient sur une ligne à part */
-  width: 100%; /* Ils prennent toute la largeur de la colonne pour être alignés à gauche */
   text-align: left;
   font-size: 18px;
   margin-bottom: 8px;
@@ -391,7 +400,26 @@ input::-webkit-inner-spin-button {
         background-color: #ffffff;
         z-index: 9999;
     }
+    /* titre et texte */
+    .titre-nous-rencontrer {
+        font-size: 32px !important;
+    }
 
-   
+    .texte-page-rencontrer {
+        font-size: 18px !important;
+        padding: 0 10px;
+    }
 
+    /* On s'assure que la fleur ne décale pas le texte */
+    .icone-fleur-rencontrer {
+        width: 60px !important;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /* Si tu veux qu'elle soit sur le côté sans décentrer le texte : */
+        position: absolute; 
+        left: 20px; 
+        top: 50%;
+        transform: translateY(-50%);
+    }
    }
