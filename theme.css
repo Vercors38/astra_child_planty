@@ -336,12 +336,13 @@ input::-webkit-inner-spin-button {
 
                                                             /* mise en forme du FOOTER */
 
-#custom-footer p{
+#custom-footer a{
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 0px;
+  color: black;
 }
 
                                                             /* mise en forme du RESPONSIVE */

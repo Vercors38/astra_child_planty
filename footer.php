@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <footer id="custom-footer" class="site-footer">
 	<div class="footer-container">
-		<p>Mentions légales</p>
+		<a href="#">Mentions légales</a>
 	</div>
 </footer>
 
