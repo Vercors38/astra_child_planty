@@ -105,15 +105,16 @@ padding-bottom: 50px;
 .titre-gouts{
   color: #D2776A;
 }
-
+.canettes-alignees {
+  padding: 0px!important;
+}
 
                                                   /* mise en forme de la page NOUS RENCONTRER */
 
 /* mise en forme du titre, du texte et de la fleur */
-
 .texte-page-rencontrer{
   font-size: 20px;
-    max-width: 800px;
+    max-width: 800px;/* Limite la largeur du texte pour une meilleure lisibilité */
     margin: 0 auto;
     color: #000000;
     width: 100%;
@@ -169,7 +170,6 @@ padding-bottom: 50px;
   top: -25%;
   right: 20%;
   transform: translate(0%, 0%);
-  /*width: 147px;*/
   width: 40%;
   height: auto;
   z-index: 1;
@@ -178,11 +178,30 @@ padding-bottom: 50px;
   padding-bottom: 0 !important;
 }
 
+/* responsive page "Nous rencontrer" */
+@media screen and (max-width: 500px) {
+.texte-page-rencontrer{
+  font-size: 15px!important;
+   }
+.titre-nous-rencontrer{
+  font-size: 24px!important;
+}
+.bouton-envoyer{
+  width: 100%!important;
+  z-index: 10;
+}
+}
+@media screen and (max-width: 1000px) {
+.page-rencontrer-feuille{
+  display: none;
+   }
+}
+
                                                                 /* mise en forme de la page COMMANDER */
 
 /* mise en forme du séparateur */
 .is-style-wide{
-  width: 890px!important;
+  width: 60%!important;
 }
 /* mise en forme du titre Votre commande */
 .titre-votre-cde{
@@ -259,7 +278,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-          /* mise en forme du formulaire de contact */
+   /* mise en forme du formulaire de contact */
 
 .container-forms h3{
   color: white;
@@ -282,7 +301,7 @@ input::-webkit-inner-spin-button {
   top: 0;
   left: 50%;/* Positionner la ligne au centre horizontalement */
   transform: translateX(-50%); /* Centre la ligne */
-  width: 890px; /* Largeur exacte de la ligne pour l'aligner sur les champs */
+  width: 90%!important; /* Largeur exacte de la ligne pour l'aligner sur les champs */
   height: 2px;
   background-color: white;
 }
@@ -334,6 +353,41 @@ input::-webkit-inner-spin-button {
   padding: 15px 40px;
 }
 
+/* responsive page "Nous rencontrer" */
+@media screen and (max-width: 750px) {
+.titre-votre-cde{
+  padding: 0px!important;
+  margin: auto!important;
+  font-size:medium!important;
+}
+/* On force le conteneur de colonnes à s'afficher en bloc (vertical) */
+    .fluentform .ff-t-container {
+        display: block !important;
+    }
+
+    /* Chaque colonne prend maintenant toute la largeur */
+    .fluentform .ff-t-cell {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        border-left: none !important; /* On enlève la ligne blanche verticale */
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 30px; /* Espace entre les deux blocs */
+    }
+
+    /* On autorise le texte des labels à s'étendre sans se couper */
+    .container-forms label {
+        white-space: normal !important; /* Permet le retour à la ligne propre si besoin */
+        word-break: break-word;
+    }
+    
+    /* On ajuste la ligne blanche horizontale du haut pour le mobile */
+    .container-forms::before {
+        width: 100% !important;
+    }
+}
+
                                                             /* mise en forme du FOOTER */
 
 #custom-footer a{
@@ -368,7 +422,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* --- RESPONSIVE : Sous 850px --- */
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 921px) {
     /* 1. On force le conteneur global à prendre TOUTE la largeur */
     .header-container {
         display: flex;
@@ -399,26 +453,7 @@ input::-webkit-inner-spin-button {
         background-color: #ffffff;
         z-index: 9999;
     }
-    /* titre et texte */
-    .titre-nous-rencontrer {
-        font-size: 32px !important;
-    }
+    
 
-    .texte-page-rencontrer {
-        font-size: 18px !important;
-        padding: 0 10px;
-    }
-
-    /* On s'assure que la fleur ne décale pas le texte */
-    .icone-fleur-rencontrer {
-        width: 60px !important;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        /* Si tu veux qu'elle soit sur le côté sans décentrer le texte : */
-        position: absolute; 
-        left: 20px; 
-        top: 50%;
-        transform: translateY(-50%);
-    }
+  
    }

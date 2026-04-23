@@ -1,16 +1,18 @@
 <?php
 // Hook pour charger les styles du thème enfant
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
-function theme_enqueue_styles()
-{
- /* chargement du fichier style parent */
+
+function theme_enqueue_styles() {
+    // 1. Chargement du style du thème PARENT
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
- /* chargement du fichier style enfant */
-    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/theme.css',
- /* aucune dépendance, le fichier est chargé après le style parent */
-    array(),
- /* le navigateur recharge le CSS à chaque fois que le fichier est modifié, pour éviter les problèmes de cache */
-  filemtime(get_stylesheet_directory() . '/theme.css'));
+
+    // 2. Chargement du style du thème ENFANT
+    wp_enqueue_style(
+        'child-theme-style', // Identifiant unique
+        get_stylesheet_directory_uri() . '/theme.css', // Chemin vers votre fichier
+        array('parent-style'), // force le chargement après le style parent
+        filemtime(get_stylesheet_directory() . '/theme.css') // Version anti-cache
+    );
 }
 
 // Cette fonction ajoute un lien "Admin" au menu de navigation principal et mobile pour les administrateurs connectés.
