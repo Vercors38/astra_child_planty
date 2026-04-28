@@ -352,14 +352,23 @@ input::-webkit-inner-spin-button {
   margin: 40px auto; /* Marge en haut pour espacer du formulaire, et auto à gauche et droite pour centrer */
   padding: 15px 40px;
 }
+/* Les champs de type "number" sont réduits pour les quantités */
+.fluentform .ff-el-form-control[type="number"] {
+  width: 39px;
+  text-align: center;
+  padding: 0;
+  border: 1px solid var(--color-grey);
+  border-radius: 4px;
+  font-size: 16px;
+  -moz-appearance: textfield; /* Pour Firefox, qui ajoute des flèches de contrôle sur les champs de type number */
+}
 
 /* responsive page "Nous rencontrer" */
 @media screen and (max-width: 750px) {
-.titre-votre-cde{
-  padding: 0px!important;
-  margin: auto!important;
-  font-size:medium!important;
-}
+    .titre-votre-cde{
+      padding: 0px!important;
+      margin: auto!important;
+    }
 /* On force le conteneur de colonnes à s'afficher en bloc (vertical) */
     .fluentform .ff-t-container {
         display: block !important;
