@@ -30,7 +30,7 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
 }
 ?>
 <?php wp_head(); ?><!-- hook pour ajouter les scripts et styles -->
-<?php astra_head_bottom(); ?>
+<?php astra_head_bottom(); ?><!-- hook pour ajouter des éléments à la fin de la section head -->
 </head>
 
 <body <?php astra_schema_body(); ?> <?php body_class(); ?>>
@@ -86,8 +86,8 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
             wp_nav_menu(array(
                 'theme_location' => 'primary', // Assurez-vous qu'un menu est assigné à "Menu principal" dans WP
                 'menu_id'        => 'primary-menu',// ID pour le menu, utilisé pour le ciblage CSS
-                'container'      => false,
-                'fallback_cb'    => false,
+                'container'      => false,// Désactive le conteneur <div> par défaut autour du menu
+                'fallback_cb'    => false,// Désactive le fallback pour éviter d'afficher une liste de pages si aucun menu n'est assigné
                 'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',// Structure HTML personnalisée pour le menu, avec des classes spécifiques pour le ciblage CSS
             ));
             ?>

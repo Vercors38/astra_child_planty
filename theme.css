@@ -180,16 +180,25 @@ padding-bottom: 50px;
 
 /* responsive page "Nous rencontrer" */
 @media screen and (max-width: 500px) {
-.texte-page-rencontrer{
-  font-size: 15px!important;
-   }
-.titre-nous-rencontrer{
-  font-size: 24px!important;
-}
-.bouton-envoyer{
-  width: 100%!important;
-  z-index: 10;
-}
+  .texte-page-rencontrer{
+    font-size: 15px!important;
+    }
+  .titre-nous-rencontrer{
+    font-size: 24px!important;
+  }
+  .bouton-envoyer{
+    width: 100%!important;
+    z-index: 10;
+  }
+  #fluentform_5{
+    width:100%;
+    height:auto;
+    margin: auto;/* pour que le formulaire soit centré */
+    z-index: 2;
+  }
+  .uag-image-146{
+    display: none!important;
+  }
 }
 @media screen and (max-width: 1000px) {
 .page-rencontrer-feuille{
@@ -363,7 +372,7 @@ input::-webkit-inner-spin-button {
   -moz-appearance: textfield; /* Pour Firefox, qui ajoute des flèches de contrôle sur les champs de type number */
 }
 
-/* responsive page "Nous rencontrer" */
+/* responsive page "Commander" */
 @media screen and (max-width: 750px) {
     .titre-votre-cde{
       padding: 0px!important;
