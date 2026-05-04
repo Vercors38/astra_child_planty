@@ -89,6 +89,7 @@ padding-bottom: 50px;
   position: relative;
   z-index: 2;
 }
+/* Les feuilles sont positionnées en absolu pour pouvoir les superposer à la canette, et on les centre verticalement par rapport à la canette */
 .feuille-droite, .feuille-gauche {
   position: absolute;
   top: 50%;
