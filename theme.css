@@ -131,6 +131,7 @@ padding-bottom: 50px;
   margin:0px;
   padding:0px;
 }
+/* La feuille est positionnée en absolu par rapport à son conteneur (la row), et on la place en bas à droite de ce conteneur */
 .page-rencontrer-feuille {
   position:absolute;
   margin:0px;
@@ -440,9 +441,8 @@ input::-webkit-inner-spin-button {
     transition: 0.3s;
 }
 
-/* --- RESPONSIVE : Sous 850px --- */
+/* --- RESPONSIVE : Sous 921px --- */
 @media screen and (max-width: 921px) {
-    /* 1. On force le conteneur global à prendre TOUTE la largeur */
     .header-container {
         display: flex;
         width: 100%;
@@ -450,20 +450,25 @@ input::-webkit-inner-spin-button {
         box-sizing: border-box;
     }
 
-    /* On demande à la navigation d'occuper tout l'espace restant */
-    /* C'est ce qui va pousser le bouton vers la droite */
     .main-navigation {
-        display: flex !important;/* On utilise flex pour pouvoir utiliser flex: 1 et justify-content */
-        flex: 1; /* Prend tout l'espace disponible */
-        justify-content: flex-end; /* Aligne le bouton à droite de cet espace */
+        display: flex !important;
+        flex: 1; 
+        justify-content: flex-end; 
     }
 
     .menu-toggle {
         display: flex;
+        background-color: white;
         margin-right: 30px;
-   }
-   #primary-menu {
-        display: none;
+        z-index: 10000; /* S'assure que le bouton reste au dessus */
+    }
+    .menu-toggle:hover {
+        background-color: white; /* Pas de changement de couleur au hover pour le bouton lui même */
+    }
+
+    /* État fermé par défaut */
+    #primary-menu {
+        display: none; /* On cache */
         flex-direction: column;
         width: 100%;
         position: absolute;
@@ -471,8 +476,45 @@ input::-webkit-inner-spin-button {
         left: 0;
         background-color: #ffffff;
         z-index: 9999;
+        height: auto;
+    }
+
+    
+    /* Quand le JS ajoute 'is-active' à la balise <nav> */
+    .main-navigation.is-active #primary-menu {
+        display: flex !important;
+        background-color: #ffffff !important; /* Fond blanc */
+        margin: 0;
+        padding: 0;
     }
     
+    /* Ajuster les liens en mobile pour qu'ils soient lisibles */
+    #primary-menu li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+    
+    #primary-menu li a {
+        display: block;
+        padding: 15px;
+        width: 100%;
+    }
+}
+/* On cible tous les états du bouton pour supprimer le bleu du thème astra */
+.menu-toggle,
+.menu-toggle:focus,
+.menu-toggle:active,
+.menu-toggle:hover {
+    background-color: transparent !important; 
+    outline: none !important;                 /* Supprime le liseré de sélection bleu */
+    box-shadow: none !important;               /* Supprime toute ombre portée bleue */
+}
 
-  
-   }
+/*le conteneur du menu (la navigation) qui devient bleu du au thème astra */
+.main-navigation,
+.main-navigation:focus,
+.main-navigation:active {
+    background-color: #ffffff !important;
+}
