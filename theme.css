@@ -419,102 +419,56 @@ input::-webkit-inner-spin-button {
   color: black;
 }
 
-                                                            /* mise en forme du RESPONSIVE */
-
-/* Affichage du menu hamburger sur les petits écrans (inf à 850px) */
-.menu-toggle {
-    display: none;/* On cache le bouton par défaut, il n'apparaîtra que sur les petits écrans */
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    background: transparent;
-    border: none;
-    cursor: pointer;/* On veut que le bouton soit cliquable mais sans style par défaut */
-    padding: 0;
-}
-/* Mise en forme des trois barres du menu hamburger */
-.menu-toggle .bar {
-    width: 100%;
-    height: 3px;
-    background-color: #DC9F96; /* Couleur des barres */
-    transition: 0.3s;
-}
-
+ 
 /* --- RESPONSIVE : Sous 921px --- */
 @media screen and (max-width: 921px) {
     .header-container {
         display: flex;
         width: 100%;
-        justify-content: space-between;
+        flex-direction: column;
         box-sizing: border-box;
     }
 
-    .main-navigation {
-        display: flex !important;
-        flex: 1; 
-        justify-content: flex-end; 
+    main-navigation {
+        width: 100%;
     }
 
-    .menu-toggle {
-        display: flex;
-        background-color: white;
-        margin-right: 30px;
-        z-index: 10000; /* S'assure que le bouton reste au dessus */
-    }
-    .menu-toggle:hover {
-        background-color: white; /* Pas de changement de couleur au hover pour le bouton lui même */
-    }
-
+    
     /* État fermé par défaut */
     #primary-menu {
-        display: none; /* On cache */
+        /*display: none; /* On cache */
         flex-direction: column;
         width: 100%;
-        position: absolute;
-        top: 80px; 
+        position: relative;
+        top: 0; 
         left: 0;
         background-color: #ffffff;
         z-index: 9999;
         height: auto;
     }
-
-    
-    /* Quand le JS ajoute 'is-active' à la balise <nav> */
-    .main-navigation.is-active #primary-menu {
-        display: flex !important;
-        background-color: #ffffff !important; /* Fond blanc */
-        margin: 0;
-        padding: 0;
-    }
     
     /* Ajuster les liens en mobile pour qu'ils soient lisibles */
     #primary-menu li {
-        margin: 0;
+        margin: 0 !important;
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid #eee;
+        /*border-bottom: 1px solid #eee;*/
     }
+    #menu-item-23 a{
+      border-bottom: none !important;
+      margin-top: 10px !important;
+        }
     
-    #primary-menu li a {
+    primary-menu li a {
         display: block;
         padding: 15px;
         width: 100%;
     }
-}
-/* On cible tous les états du bouton pour supprimer le bleu du thème astra */
-.menu-toggle,
-.menu-toggle:focus,
-.menu-toggle:active,
-.menu-toggle:hover {
-    background-color: transparent !important; 
-    outline: none !important;                 /* Supprime le liseré de sélection bleu */
-    box-shadow: none !important;               /* Supprime toute ombre portée bleue */
+    /* Suppression de l'espace entre l'ID et la pseudo-classe :checked */
+    #menu-check:checked ~ .main-navigation #primary-menu {
+      display: flex !important;
+    }
+    
 }
 
-/*le conteneur du menu (la navigation) qui devient bleu du au thème astra */
-.main-navigation,
-.main-navigation:focus,
-.main-navigation:active {
-    background-color: #ffffff !important;
-}
+

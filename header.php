@@ -75,12 +75,12 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
         </div>
 
         <nav id="site-navigation" class="main-navigation">
-			<!-- menu hamburger -->
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"> 
-        		<span class="bar"></span>
-        		<span class="bar"></span>
-        		<span class="bar"></span>
-    		</button>
+			<input type="checkbox" id="menu-check" style="display:none;">
+				<label for="menu-check" class="menu-toggle" aria-label="Ouvrir le menu">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+				</label>	
 			<!-- menu de navigation principal -->
             <?php
             wp_nav_menu(array(
